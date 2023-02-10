@@ -14,7 +14,6 @@
   --hover-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   --modal-background: #fcfcfc;
-
   /* ==========NEW CODE========== */
 }
 
@@ -48,6 +47,13 @@ input,
 textarea {
   outline: none;
 }
+/* ========== */
+
+/*
+480px - Mobile
+768px - Tablet
+1200px - Desktop
+*/
 
 /* ========== */
 .container {
@@ -210,49 +216,6 @@ textarea {
   color: var(--body-background-color);
   text-align: center;
 }
-
-/* =============== FOOTER =============== */
-.page-footer {
-  background-color: var(--navy-blue-color);
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.footer-descript {
-  color: var(--cornflower-color);
-  margin-top: 16px;
-}
-
-.footer-container {
-  width: 264px;
-}
-
-.footer-wrapper {
-  display: flex;
-}
-
-/* Footer Social Container */
-.footer-social-container {
-  margin-left: 120px;
-}
-.footer-social-title {
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--body-background-color);
-}
-
-.footer-social-link {
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color var(--hover-transition);
-}
-
-.footer-social-link:hover,
-.footer-social-link:focus {
-  background-color: var(--footer-social-link-active);
-}
-
-/* =============== FOOTER =============== */
 
 /* Buttons */
 .btn {
@@ -673,7 +636,27 @@ textarea {
   justify-content: center;
 }
 
-.form-close-btn {
+.close-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  background-color: var(--cornflower-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color var(--hover-transition);
+}
+
+.order-service-wrapper .close-btn {
+  top: 24px;
+  right: 24px;
+}
+
+/* .form-close-btn {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -688,21 +671,21 @@ textarea {
   background-color: var(--cornflower-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: background-color var(--hover-transition);
-}
+} */
 
-.form-close-btn:hover,
-.form-close-btn:focus {
+.close-btn:hover,
+.close-btn:focus {
   background-color: var(--ocean-color);
   border: var(--ocean-color);
 }
 
-.form-close-btn-icon:hover,
-.form-close-btn-icon:focus {
+.close-btn-icon:hover,
+.close-btn-icon:focus {
   transition: fill var(--hover-transition);
 }
 
-.form-close-btn:hover .form-close-btn-icon,
-.form-close-btn:focus .form-close-btn-icon {
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
   fill: var(--body-background-color);
 }
 
@@ -867,3 +850,96 @@ textarea {
 }
 
 /* ==================== MODAL WINDOW ==================== */
+
+/* =============== MOBILE MENU =============== */
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 80px 32px 32px;
+  background-color: #ffffff;
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .close-btn {
+    top: 40px;
+    right: 40px;
+}
+
+.menu-container .social-link {
+  background-color: var(--iris-color);
+  transition: background-color var(--hover-transition);
+}
+
+.menu-container .social-link:hover,
+.menu-container .social-link:focus {
+  background-color: var(--ocean-color);
+}
+/* =============== MOBILE MENU =============== */
+
+/* =============== FOOTER =============== */
+.page-footer {
+  background-color: var(--navy-blue-color);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.footer-descript {
+  color: var(--cornflower-color);
+  margin-top: 16px;
+}
+
+.footer-container {
+  width: 264px;
+}
+
+.footer-wrapper {
+  display: flex;
+}
+
+/* Footer Social Container */
+.footer-social-container {
+  margin-left: 120px;
+}
+.footer-social-title {
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--body-background-color);
+}
+
+.footer-social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--hover-transition);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--footer-social-link-active);
+}
+
+/* =============== FOOTER =============== */
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
