@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <header class="page-header">
+    <header class="header">
       <div class="container navigation">
         <!--Navigation-->
         <nav class="menu">
@@ -30,29 +30,6 @@
           <a href="./index.html" class="link logo-part-one"
             >Web<span class="logo-part-two-header">Studio</span></a
           >
-
-          <!--  -->
-          <button
-            type="button"
-            class="menu-toggle js-open-menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-          >
-            <svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-          <!--  -->
 
           <ul class="menu-items">
             <li class="menu-item">
@@ -86,12 +63,89 @@
             </li>
           </ul>
         </address>
+
+        <!-- Menu Button -->
+        <button
+          type="button"
+          class="menu-btn js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="mobile-menu-btn-icon" width="32" height="22">
+            <use href="./images/icons.svg#icon-mobile-menu-btn"></use>
+          </svg>
+        </button>
+        <!-- Menu Button -->
+      </div>
+
+      <div class="menu-container js-menu-container" id="mobile-menu">
+        <button class="close-btn js-close-menu" type="button">
+          <svg class="close-btn-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close-modal"></use>
+          </svg>
+        </button>
+
+        <ul class="menu-list">
+          <li class="memu-item">
+            <a href="./index.html" class="link menu-link current-menu-link">Studio</a>
+          </li>
+          <li class="memu-item">
+            <a href="./portfolio.html" class="link menu-link">Portfolio</a>
+          </li>
+          <li class="memu-item">
+            <a href="#" class="link menu-link">Contacts</a>
+          </li>
+        </ul>
+
+        <ul class="menu-address-list">
+          <li class="menu-address-item">
+            <a class="link contact-link phone-number" href="tel:110001111111"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+          <li class="menu-address-item">
+            <a class="link contact-link" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+        </ul>
+
+        <ul class="menu-social-list">
+          <li class="menu-social-item">
+            <a href="#" class="menu-social-link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu-social-item">
+            <a href="#" class="menu-social-link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu-social-item">
+            <a href="#" class="menu-social-link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="menu-social-item">
+            <a href="#" class="menu-social-link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
 
     <main>
       <!-- Studio Page Header -->
-      <section class="studio-page-header">
+      <!-- <section class="studio-page-header">
         <div class="container">
           <div class="studio-page-header-content">
             <h1 class="page-header-title">
@@ -102,10 +156,10 @@
             </button>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!--Features-->
-      <section class="features section">
+      <!-- <section class="features section">
         <h2 class="visually-hidden">Features</h2>
         <div class="container">
           <ul class="features-card-items">
@@ -166,9 +220,9 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
-      <!--What are we doing-->
+      <!-- Directions Section - What are we doing -->
       <section class="directions">
         <div class="container">
           <h2 class="part-title">What are we doing</h2>
@@ -176,7 +230,8 @@
           <ul class="direction-items">
             <li class="direction-item">
               <img
-                src="./images/what-are-we-doing/img1.jpg"
+                srcset="./images/directions/desktop@2x.jpg 2x"
+                src="./images/directions/desktop.jpg"
                 alt="Desktop"
                 width="360"
                 height="300"
@@ -185,7 +240,8 @@
 
             <li class="direction-item">
               <img
-                src="./images/what-are-we-doing/img2.jpg"
+                srcset="./images/directions/mobile@2x.jpg 2x"
+                src="./images/directions/mobile.jpg"
                 alt="Mobile"
                 width="360"
                 height="300"
@@ -194,7 +250,8 @@
 
             <li class="direction-item">
               <img
-                src="./images/what-are-we-doing/img3.jpg"
+                srcset="./images/directions/design@2x.jpg 2x"
+                src="./images/directions/design.jpg"
                 alt="Design"
                 width="360"
                 height="300"
@@ -205,13 +262,14 @@
       </section>
 
       <!--Our Team-->
-      <section class="team section">
+      <!-- <section class="team section">
         <div class="container">
           <h2 class="part-title">Our Team</h2>
           <ul class="team-card-items">
             <li class="team-card-item">
               <img
-                src="./images/personal/mark-guerrero.jpg"
+                srcset="./images/personal/product-desinger@2x.jpg 2x"
+                src="./images/personal/product-desinger.jpg"
                 alt="Product Designer Mark Guerrero"
                 width="264"
                 height="260"
@@ -259,7 +317,8 @@
 
             <li class="team-card-item">
               <img
-                src="./images/personal/tom-ford.jpg"
+                srcset="./images/personal/frontend-developer@2x.jpg 2x"
+                src="./images/personal/frontend-developer.jpg"
                 alt="Frontend Developer Tom Ford"
                 width="264"
                 height="260"
@@ -306,7 +365,8 @@
 
             <li class="team-card-item">
               <img
-                src="./images/personal/camila-garcia.jpg"
+                srcset="./images/personal/marketing@2x.jpg 2x"
+                src="./images/personal/marketing.jpg"
                 alt="Marketing Camila Garcia"
                 width="264"
                 height="260"
@@ -353,7 +413,8 @@
 
             <li class="team-card-item">
               <img
-                src="./images/personal/daniel-wilson.jpg"
+                srcset="./images/personal/ui-designer@2x.jpg 2x"
+                src="./images/personal/ui-designer.jpg"
                 alt="UI Designer Daniel Wilson"
                 width="264"
                 height="260"
@@ -399,9 +460,9 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
-      <section class="customers section">
+      <!-- <section class="customers section">
         <div class="container">
           <h2 class="part-title">Customers</h2>
           <ul class="list customer-items">
@@ -449,13 +510,12 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
     </main>
 
-    <footer class="page-footer">
+    <!-- <footer class="page-footer">
       <div class="container footer-wrapper">
         <div class="footer-container">
-          <!--Logo-->
           <a href="./index.html" class="link logo-part-one"
             >Web<span class="logo-part-two-footer">Studio</span></a
           >
@@ -518,9 +578,9 @@
           </form>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
-    <div class="backdrop is-hidden" data-modal>
+    <!-- <div class="backdrop is-hidden" data-modal>
       <div class="order-service-wrapper">
         <button class="close-btn" type="button" data-modal-close>
           <svg class="close-btn-icon" width="8" height="8">
@@ -610,74 +670,7 @@
           <button class="btn form-send-btn" type="submit">Send</button>
         </form>
       </div>
-    </div>
-
-    <div class="menu-container js-menu-container" id="mobile-menu">
-      <button class="close-btn js-close-menu" type="button">
-        <svg class="close-btn-icon" width="8" height="8">
-          <use href="./images/icons.svg#icon-close-modal"></use>
-        </svg>
-      </button>
-
-      <nav>
-        <ul class="menu-list">
-          <li class="memu-item">
-            <a href="./index.html" class="link menu-link">Studio</a>
-          </li>
-          <li class="memu-item">
-            <a href="./portfolio.html" class="link menu-link">Portfolio</a>
-          </li>
-          <li class="memu-item">
-            <a href="#" class="link menu-link">Contacts</a>
-          </li>
-        </ul>
-      </nav>
-      <address>
-        <ul class="menu-address-list">
-          <li class="menu-address-item">
-            <a class="link contact-link" href="tel:110001111111"
-              >+11 (000) 111-11-11</a
-            >
-          </li>
-          <li class="menu-address-item">
-            <a class="link contact-link" href="mailto:info@devstudio.com"
-              >info@devstudio.com</a
-            >
-          </li>
-        </ul>
-      </address>
-
-      <ul class="social-items">
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="24" height="24">
-              <use href="./images/icons.svg#icon-instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="24" height="24">
-              <use href="./images/icons.svg#icon-twitter"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="24" height="24">
-              <use href="./images/icons.svg#icon-facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-item">
-          <a href="#" class="social-link">
-            <svg class="social-icon" width="24" height="24">
-              <use href="./images/icons.svg#icon-linkedin"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
+    </div> -->
 
     <script
       defer
