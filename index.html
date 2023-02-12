@@ -23,25 +23,22 @@
 
   <body>
     <header class="header">
-      <div class="container navigation">
+      <div class="container header-container">
         <!--Navigation-->
-        <nav class="menu">
-          <!--Logo-->
+        <nav class="navigation">
           <a href="./index.html" class="link logo-part-one"
             >Web<span class="logo-part-two-header">Studio</span></a
           >
-
-          <ul class="menu-items">
-            <li class="menu-item">
+          <ul class="navigation-list">
+            <li class="navigation-item">
               <a href="./index.html" class="link nav-link nav-link-active"
                 >Studio</a
               >
             </li>
-
-            <li class="menu-item">
+            <li class="navigation-item">
               <a href="./portfolio.html" class="link nav-link">Portfolio</a>
             </li>
-            <li class="menu-item">
+            <li class="navigation-item">
               <a href="#" class="link nav-link">Contacts</a>
             </li>
           </ul>
@@ -49,13 +46,12 @@
 
         <!--Contacts-->
         <address class="contacts">
-          <ul class="contact-items">
+          <ul class="contact-list">
             <li class="contact-item">
               <a href="mailto:info@devstudio.com" class="link contact-link"
                 >info@devstudio.com</a
               >
             </li>
-
             <li class="contact-item">
               <a href="tel:+110001111111" class="link contact-link"
                 >+11 (000) 111-11-11</a
@@ -87,7 +83,9 @@
 
         <ul class="menu-list">
           <li class="memu-item">
-            <a href="./index.html" class="link menu-link current-menu-link">Studio</a>
+            <a href="./index.html" class="link menu-link current-menu-link"
+              >Studio</a
+            >
           </li>
           <li class="memu-item">
             <a href="./portfolio.html" class="link menu-link">Portfolio</a>
@@ -145,16 +143,12 @@
 
     <main>
       <!-- Studio Page Header -->
-      <section class="studio-page-header">
-        <div class="container">
-          <div class="studio-page-header-content">
-            <h1 class="page-header-title">
-              Effective Solutions for Your Business
-            </h1>
-            <button type="button" class="btn page-header-btn" data-modal-open>
-              Order Service
-            </button>
-          </div>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Effective Solutions for Your Business</h1>
+          <button type="button" class="btn hero-btn" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
 
@@ -513,7 +507,7 @@
       </section> -->
     </main>
 
-    <footer class="page-footer">
+    <!-- <footer class="page-footer">
       <div class="container footer-wrapper">
         <div class="footer-container">
           <a href="./index.html" class="link logo-part-one"
@@ -578,7 +572,7 @@
           </form>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <div class="backdrop is-hidden" data-modal>
       <div class="order-service-wrapper">
