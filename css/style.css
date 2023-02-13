@@ -53,13 +53,31 @@ button {
 }
 /* ========== */
 
-/*
-480px - Mobile
-768px - Tablet
-1200px - Desktop
-*/
-
 /* ========== GLOBAL ========== */
+/* Part hidden */
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/* Parts */
+.part-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  text-align: center;
+}
+
 .container {
   margin: 0 auto;
   max-width: 428px;
@@ -134,6 +152,10 @@ button {
 .header {
   padding-top: 24px;
   padding-bottom: 23px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--body-background-color);
   border-bottom: 1px solid var(--cornflower-color);
 }
 
@@ -667,9 +689,10 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-  .customers-wrapper {
+  .customer-list {
     max-width: 700px;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .customer-link {
@@ -684,7 +707,7 @@ button {
 }
 
 @media screen and (min-width: 1199px) {
-  .customers-wrapper {
+  .customer-list {
     max-width: 100%;
   }
 
@@ -757,13 +780,14 @@ button {
 .portfolio-card-items {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 72px;
-  gap: 48px 24px;
+  /* margin-top: 72px; */
+  margin-top: 48px;
+  /* gap: 48px 24px; */
+  gap: 48px;
 }
 
 .portfolio-card-item {
   background-color: var(--body-background-color);
-  flex-basis: calc((100% - 2 * 24px) / 3);
 }
 
 .portfolio-card-link {
@@ -815,6 +839,28 @@ button {
 .portfolio-overlay-text {
   color: var(--cloud-color);
 }
+
+@media screen and (min-width: 768px) {
+  .portfolio-card-items {
+    margin-top: 64px;
+    gap: 48px 24px;
+  }
+
+  .portfolio-card-item {
+    flex-basis: calc((100% * 24px) / 2);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio-card-items {
+    margin-top: 72px;
+    gap: 48px 24px;
+  }
+
+  .portfolio-card-item {
+    flex-basis: calc((100% - 2 * 24px) / 3);
+  }
+}
 /* ==================== Portfolio Cards ==================== */
 /* ==================== PORTFOLIO SECTION ==================== */
 
@@ -836,30 +882,6 @@ button {
   letter-spacing: 0.02em;
   color: var(--slate-color);
   margin-top: 8px;
-}
-
-/* Parts */
-.part-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  text-transform: capitalize;
-  text-align: center;
-}
-
-/* Part hidden */
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
 }
 
 /* ==================== MODAL WINDOW ==================== */
@@ -886,13 +908,19 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
+  width: 392px;
   padding: 72px 24px 24px;
   background-color: var(--modal-background);
   border-radius: 4px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: box-shadow var(--hover-transition);
+}
+
+@media screen and (min-width: 768px) {
+  .order-service-wrapper {
+    width: 408px;
+  }
 }
 
 .order-service-form {
@@ -1116,37 +1144,15 @@ button {
 
 .footer-container {
   width: 264px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media screen and (min-width: 768px) {
-  .footer-container {
-    align-items: flex-start;
-  }
-
-  .footer-wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .page-footer {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
 }
 
 /* ========== Footer Social Container ========== */
-.footer-social-container {
+.footer-social-wrapper {
   margin-top: 72px;
 }
 
@@ -1159,6 +1165,7 @@ button {
 }
 
 .footer-social-list {
+  justify-content: center;
   gap: 16px;
 }
 
@@ -1170,19 +1177,6 @@ button {
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--footer-social-link-active);
-}
-
-@media screen and (min-width: 768px) {
-  .footer-social-container {
-    margin-left: 120px;
-  }
-
-  .footer-social-title {
-    text-align: start;
-  }
-}
-
-@media screen and (min-width: 1200px) {
 }
 
 /* =============== SUBSCRIBE ==================== */
@@ -1251,14 +1245,60 @@ button {
 }
 
 @media screen and (min-width: 768px) {
+  .footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 92px;
+  }
+
+  .footer-container {
+    margin-left: 0;
+    margin-right: 0;
+    align-items: flex-start;
+  }
+
+  .footer-social-wrapper {
+    margin-top: 0;
+    margin-left: 24px;
+  }
+
+  .footer-social-title {
+    text-align: start;
+  }
+
+  .subscribe-title {
+    text-align: start;
+  }
+
+  .subscribe-form {
+    display: flex;
+  }
+
+  .subscribe-input {
+    width: 264px;
+  }
+
   .subscribe-btn {
+    margin-top: 0;
     margin-left: 24px;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .page-footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .footer-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .subscribe-wrapper {
-    margin-left: 80px;
+    width: 453px;
+    margin-top: 0;
+    margin-left: auto;
   }
 
   .subscribe-input {
