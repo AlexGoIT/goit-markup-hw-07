@@ -61,27 +61,21 @@ button {
 
 /* ========== GLOBAL ========== */
 .container {
+  margin: 0 auto;
+  max-width: 428px;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-@media screen and (min-width: 480px) {
-  .container {
-    width: 428px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    max-width: 768px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1158px;
+    max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -118,6 +112,7 @@ button {
 
 .contacts {
   font-style: normal;
+  margin-left: auto;
 }
 
 .contact-link {
@@ -137,7 +132,6 @@ button {
 
 .header-container {
   display: flex;
-  justify-content: space-between;
 }
 /* =============== LOGO =============== */
 .logo-part-one {
@@ -156,7 +150,6 @@ button {
 /* =============== LOGO =============== */
 
 /* =============== NAVIGATION =============== */
-
 .nav-link {
   font-weight: 500;
   color: var(--navy-blue-color);
@@ -241,8 +234,6 @@ button {
   }
 }
 
-
-
 /* .nav-link {
   font-weight: 500;
   color: var(--navy-blue-color);
@@ -316,6 +307,7 @@ button {
 /* =============== MOBILE MENU BUTTON =============== */
 .menu-btn {
   padding: 0;
+  margin-left: auto;
   line-height: 0;
   outline: none;
   border: none;
@@ -388,6 +380,12 @@ button {
   line-height: 1.11;
   text-transform: capitalize;
   color: var(--accent-color);
+}
+
+@media screen and (max-width: 412px) {
+  .phone-number {
+    font-size: 30px;
+  }
 }
 
 .menu-social-list {
@@ -485,17 +483,17 @@ button {
     max-width: 496px;
     font-size: 56px;
   }
+}
 
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    .hero {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url('../images/hero/people-office-tablet@2x.jpg');
-    }
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 768px) and (min-resolution: 192dpi),
+  screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero/people-office-tablet@2x.jpg');
   }
 }
 
@@ -511,17 +509,17 @@ button {
       ),
       url('../images/hero/people-office-desktop.jpg');
   }
+}
 
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    .hero {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url('../images/hero/people-office-desktop@2x.jpg');
-    }
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1200px) and (min-resolution: 192dpi),
+  screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero/people-office-desktop@2x.jpg');
   }
 }
 
