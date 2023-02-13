@@ -524,12 +524,6 @@ button {
 }
 /* =============== HERO SECTION =============== */
 
-.features-card-items,
-.direction-items,
-.team-card-items,
-.filter-items {
-  gap: 24px;
-}
 /* =============== FEATURES SECTION =============== */
 .features {
   padding-top: 96px;
@@ -622,9 +616,6 @@ button {
     display: flex;
     flex-wrap: wrap;
     margin-top: 72px;
-  }
-
-  .direction-item {
     gap: 24px;
   }
 }
@@ -633,24 +624,28 @@ button {
 /* =============== OUR TEAMS SECTION =============== */
 .team {
   background-color: var(--cloud-color);
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
-.team-card-items {
-  display: flex;
-  flex-wrap: wrap;
+.team-card-list {
   margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
 }
 
 .team-card-item {
+  width: 264px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
-  flex-basis: calc((100% - 3 * 24px) / 4);
   background-color: var(--body-background-color);
 }
 
 /* =============== Social Icons ==================== */
-.social-items {
+.social-list {
   display: flex;
   margin-top: 16px;
   gap: 24px;
@@ -678,6 +673,31 @@ button {
 .social-icon {
   fill: var(--light-slate-color);
 }
+
+@media screen and (min-width: 768px) {
+  .team-card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 64px 24px;
+    justify-content: center;
+  }
+}
+
+/* .team-card-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 72px;
+  gap: 24px;
+}
+
+.team-card-item {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+  background-color: var(--body-background-color);
+  flex-basis: calc((100% - 3 * 24px) / 4);
+} */
+
 /* ==================== Social Icons ==================== */
 /* ================= OUR TEAMS SECTION ================== */
 
@@ -759,6 +779,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   width: 300px;
+  gap: 24px;
 }
 
 @media screen and (min-width: 768px) {
