@@ -41,6 +41,8 @@ ul {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 input,
@@ -289,7 +291,7 @@ button {
   background-color: #ffffff;
   z-index: 999;
   transform: translateX(100%);
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms var(--hover-transition);
 
   display: flex;
   flex-direction: column;
@@ -384,7 +386,6 @@ button {
 /* =============== HERO SECTION =============== */
 /* >=320px MOBILE <=767px */
 .hero {
-  max-width: 428px;
   padding-top: 112px;
   padding-bottom: 112px;
   margin: 0 auto;
@@ -398,18 +399,6 @@ button {
     ),
     url('../images/hero/people-office-mobile.jpg');
   text-align: center;
-}
-
-@media screen and (min-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url('../images/hero/people-office-mobile@2x.jpg');
-  }
 }
 
 .hero-title {
@@ -441,20 +430,25 @@ button {
   background-color: var(--ocean-color);
 }
 
-/* >=768px TABLET <=1199px */
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero/people-office-mobile@2x.jpg');
+  }
+}
+
 @media screen and (min-width: 768px) {
   .hero {
-    max-width: 758px;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
       url('../images/hero/people-office-tablet.jpg');
-  }
-
-  .hero-title {
-    max-width: 496px;
-    font-size: 56px;
   }
 
   @media screen and (min-device-pixel-ratio: 2),
@@ -468,9 +462,13 @@ button {
         url('../images/hero/people-office-tablet@2x.jpg');
     }
   }
+
+  .hero-title {
+    max-width: 496px;
+    font-size: 56px;
+  }
 }
 
-/* DESKTOP >=1200px */
 @media screen and (min-width: 1200px) {
   .hero {
     max-width: 1440px;
@@ -668,6 +666,11 @@ button {
   gap: 72px 16px;
 }
 
+/* .customer-item {
+  width: calc(100% / 2 - 16px);
+  height: calc(100% / 2 - 72px);
+} */
+
 .customer-link {
   width: 190px;
   height: 88px;
@@ -855,7 +858,7 @@ button {
   }
 
   .portfolio-card-item {
-    flex-basis: calc((100% * 24px) / 2);
+    /* flex-basis: calc((100% * 24px) / 2); */
   }
 }
 
@@ -866,7 +869,7 @@ button {
   }
 
   .portfolio-card-item {
-    flex-basis: calc((100% - 2 * 24px) / 3);
+    /* flex-basis: calc((100% - 2 * 24px) / 3); */
   }
 }
 /* ==================== Portfolio Cards ==================== */
@@ -1146,6 +1149,8 @@ button {
 }
 
 .footer-descript {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   color: var(--cornflower-color);
   margin-top: 16px;
 }
