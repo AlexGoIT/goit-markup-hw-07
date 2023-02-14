@@ -79,10 +79,15 @@ button {
 }
 
 .container {
-  margin: 0 auto;
   max-width: 428px;
   padding-left: 16px;
   padding-right: 16px;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -97,6 +102,11 @@ button {
     padding-left: 15px;
     padding-right: 15px;
   }
+
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .text-center {
@@ -106,13 +116,6 @@ button {
 .section {
   padding-top: 96px;
   padding-bottom: 96px;
-}
-
-@media screen and (min-width: 1199px) {
-  .section {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
 }
 
 .btn {
@@ -342,12 +345,6 @@ button {
   color: var(--accent-color);
 }
 
-@media screen and (max-width: 412px) {
-  .phone-number {
-    font-size: 30px;
-  }
-}
-
 .menu-social-list {
   display: flex;
   align-items: center;
@@ -369,6 +366,17 @@ button {
 .menu-social-link:hover,
 .menu-social-link:focus {
   background-color: var(--ocean-color);
+}
+
+@media screen and (min-width: 320px) and (max-width: 427px) {
+  .phone-number {
+    font-size: 24px;
+  }
+
+  .menu-social-list {
+    flex-wrap: wrap;
+    gap: 26px;
+  }
 }
 /* =============== MOBILE MENU =============== */
 /* =============== HEADER =============== */
