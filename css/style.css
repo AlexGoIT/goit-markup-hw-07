@@ -1300,6 +1300,10 @@ button {
     padding-right: 0;
   }
 
+  .footer-social-wrapper {
+    margin-left: 120px;
+  }
+
   .subscribe-wrapper {
     width: 453px;
     margin-top: 0;
